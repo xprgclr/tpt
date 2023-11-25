@@ -123,7 +123,7 @@ root@bookworm-unattended:~#
     
 
 ```text
-Rex:x:1001:**1002**:,,,:/home/Rex:/bin/bash\
+Rex:x:1001:1002:,,,:/home/Rex:/bin/bash\
 ```
 
 - Выходим из под рута, он нам больше не понадобится  
