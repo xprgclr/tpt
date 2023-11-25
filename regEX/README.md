@@ -13,7 +13,7 @@
 
 ## Intro
 
-Есть списки расписания в "Raw" нужно отформатировать его согласно своему варианту задания
+Есть списки расписания в "Raw" нужно отформатировать один из них согласно своему варианту задания
 
 <details open><summary>Вводные данные от Кирилла</summary>
 
@@ -181,4 +181,4 @@ cat kit.txt | awk -f stage.awk \
 
 ## Finish
 
-- Копируем наш [скрипт](_resources/v3g2.sh)(и возможно [хистори](_resources/v3g2_hist.txt) или [сессию](_resources/v3g2_session.html)) в [удобоваримый html](_resources/v3g2_sh.html) и обзываем в формате &lt;ИмяФамилияВариант&gt;
+- Копируем наш [скрипт](_resources/v3g2.sh)(и возможно [хистори](_resources/v3g2_hist.txt) или [сессию](https://xprgclr.github.io/tpt/regEX/)) в [удобоваримый html](https://xprgclr.github.io/tpt/regEX/bash.html) и обзываем в формате &lt;ИмяФамилияВариант&gt;
