@@ -3,7 +3,7 @@
 > Read time: 5 min
 
 - [Intro](#intro)
-- [Создаём виртуальный HDD и цепим к виртуалке](#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC-%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-hdd-%D0%B8-%D1%86%D0%B5%D0%BF%D0%B8%D0%BC-%D0%BA-%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%BA%D0%B5)
+- [Создаём виртуальный HDD и цепим к виртуалке](%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC%20%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20HDD%20%D0%B8%20%D1%86%D0%B5%D0%BF%D0%B8%D0%BC%20%D0%BA%20%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%BA%D0%B5)
 - [Делаем раздел и форматируем в файловую систему (ext4)](#%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC-%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB-%D0%B8-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D1%83%D0%B5%D0%BC-%D0%B2-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%83%D1%8E-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83-ext4)
 - [Делаем точку Монтирования](#%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC-%D1%82%D0%BE%D1%87%D0%BA%D1%83-%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
 - [Создаём юзера и группу](#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC-%D1%8E%D0%B7%D0%B5%D1%80%D0%B0-%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83)
@@ -19,7 +19,7 @@
 
 На примере моего варианта задания, и использованием VirtualBox. Хоть можно и встроенными средствами Windows создать VHD и подключить его вродь как даж к WSL (танцы с бубном). Но надёжней и безопасней проводить операции с разделами всёж на полноценной отдельной виртуалке, к тому же там можно быстро откатится назад через Snapshots в случае чего.
 
-<details><summary>Вводные данные от Кирилла</summary>
+<details open><summary>Вводные данные от Кирилла</summary>
 
 |     |     |
 | --- | --- |
@@ -72,7 +72,7 @@
     `mkdir -p /mnt/sdb1`
     
 
-<details><summary>Гифка из 3х этапов: До аттача VHD. После аттача. После создания раздела.</summary>
+<details open><summary>Гифка из 3х этапов: До аттача VHD. После аттача. После создания раздела.</summary>
 
 ![Animation.gif](_resources/Animation.gif)
 
@@ -226,7 +226,7 @@ lrwxrwxrwx 1 Rex Vegetables 6 Nov 14  2023 Chi -> Alpaca
 My variant is: lrwxrwxrwx 1 Rex Vegetables 6 November 14 2023 Chi ^_^
 ```
 
-- Отправляем лог [сессии](https://xprgclr.github.io/tpt/xfiles/). Можно еще и [history](_resources/history.txt) каждого пользователя тоже впринципе.
+- Лог [сессии](https://xprgclr.github.io/tpt/xfiles/), ну и [history](_resources/history.txt) на память.
 
 &nbsp;
 
