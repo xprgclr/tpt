@@ -224,7 +224,7 @@ lrwxrwxrwx 1 Rex Vegetables 6 Nov 14  2023 Chi -> Alpaca
 My variant is: lrwxrwxrwx 1 Rex Vegetables 6 November 14 2023 Chi ^_^
 ```
 
-- Отправляем лог [session.html](_resources/session.html) (можно еще и [history.txt](_resources/history.txt) каждого пользователя тоже впринципе).
+- Отправляем лог [сессии](https://xprgclr.github.io/tpt/xfiles/). Можно еще и [history](_resources/history.txt) каждого пользователя тоже впринципе.
 
 &nbsp;
 
