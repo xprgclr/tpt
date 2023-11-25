@@ -181,4 +181,13 @@ cat kit.txt | awk -f stage.awk \
 
 ## Finish
 
-- Копируем наш [скрипт](_resources/v3g2.sh)(и возможно [хистори](_resources/v3g2_hist.txt) или [сессию](https://xprgclr.github.io/tpt/regEX/)) в [удобоваримый html](https://xprgclr.github.io/tpt/regEX/bash.html) и обзываем в формате &lt;ИмяФамилияВариант&gt;
+- Копируем наш скрипт в удобоваримый html и обзываем в формате &lt;ИмяФамилияВариант&gt; и отправляем эту мелкую [htmlку](https://xprgclr.github.io/tpt/regEX/bash.html) в тимс. Насколько я понял - её достаточно.
+
+***
+
+P.S: На всякий случай..
+- [v3g2.sh](_resources/v3g2.sh)
+- [хистори](_resources/v3g2_hist.txt)
+- [сессия](https://xprgclr.github.io/tpt/regEX/)
+- [v3g2.html](https://xprgclr.github.io/tpt/regEX/bash.html)
+
