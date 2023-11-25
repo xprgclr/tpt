@@ -37,7 +37,7 @@
     - [Linux для Начинающих - Права Доступа и владения файлами и директориями](https://youtu.be/dR4DIo7HYoU?si=kPX7nV0S5Y0psDvF)
     - [Структура файлов и каталогов в Linux](https://youtu.be/WL2Xbndqy0k?si=56do-AlXCLyd0yIG)
 
-## Создаём виртуальный HDD и цепим к виртуалке
+## Создаём виртуальный HDD и цепляем к виртуалке
 
 <details><summary>Вместо тысячи слов. GIF:</summary>
 
