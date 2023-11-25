@@ -1,7 +1,4 @@
 it@bookworm-unattended:~$ history
-    1  sudo shutdown now
-    2  Passw0rd
-    3  history -clear
     4  sudo shutdown now
     5  lsblk
     6  sudo -i
