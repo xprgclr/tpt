@@ -89,7 +89,7 @@
     `ls -l /mnt/sdb1`  
     Там лишь lost+found - папка для мусора/битых файлов. Остальные 15 файлов скрытые
 
-```bash
+```text
 root@bookworm-unattended:~# ls -l /mnt/sdb1
 total 16
 drwx------ 2 root root 16384 Nov 25 09:55 lost+found
@@ -107,7 +107,7 @@ root@bookworm-unattended:~#
     
 - Можем посмотреть список пользователей/групп на машине посмотрев в файлы <ins>*/etc/passwd*</ins> и <ins>*/etc/group*</ins> соответственно. Список довольно не маленький , но меня интересует лишь последняя строка файла - последний добавленный юзер/группа: `сat /etc/passwd | tail -n 1` для пользователей и `cat /etc/group | tail -n 1` для групп.
     
-    ```bash
+    ```text
     root@bookworm-unattended:~# cat /etc/passwd | tail -n 1
     Rex:x:1001:1001:,,,:/home/Rex:/bin/bash
     root@bookworm-unattended:~# cat /etc/group | tail -n 1
@@ -122,7 +122,7 @@ root@bookworm-unattended:~#
 - Меняем группу на GUID - 1002
     
 
-```bash
+```text
 Rex:x:1001:**1002**:,,,:/home/Rex:/bin/bash\
 ```
 
@@ -134,7 +134,7 @@ Rex:x:1001:**1002**:,,,:/home/Rex:/bin/bash\
 - Прерываем сессию (снова `exit`)и реконектимся по ssh под Rex, либо же - заходим сразу под ним, не прерывая ssh сеанс.  
     `su - Rex`
     
-    ```bash
+    ```text
     root@bookworm-unattended:~# exit
     logout
     it@bookworm-unattended:~$ su - Rex
@@ -172,7 +172,7 @@ P.S: Форматы времени кстати у touch и date различн�
 - Теперь "Кормим" Альпаку 6 любыми символами, <ins>в кач-ве пруфа что умеем записывать через cat</ins>.  
     `cat << end > Alpaca`
     
-    ```bash
+    ```text
     Rex@bookworm-unattended:~$ cat << end > Alpaca
     > 12345
     > end
@@ -212,7 +212,7 @@ P.S: Форматы времени кстати у touch и date различн�
     `ls -l && echo -e "---done----\nMy variant is: lrwxrwxrwx 1 Rex Vegetables 6 November 14 2023 Chi ^_^ "`
 - Output
 
-```bash
+```text
 Rex@bookworm-unattended:~$ sudo date 1114070023 \
 && touch Alpaca \
 && ln -s Alpaca Chi
