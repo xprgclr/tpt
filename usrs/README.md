@@ -157,5 +157,5 @@
 
 ## Finish
 
-- [users\_session.html](_resources/users_session.html)
+- [users\_session.html](https://xprgclr.github.io/tpt/users/)
 - [user\_history.txt](_resources/user_history.txt)
