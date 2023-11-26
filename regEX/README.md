@@ -193,6 +193,6 @@ cat kit.txt | awk -f stage.awk \
 P.S: На всякий случай..
 - [v3g2.sh](_resources/v3g2.sh)
 - [хистори](_resources/v3g2_hist.txt)
-- [сессия](https://xprgclr.github.io/tpt/regEX/)
+- [сессия]()
 - [v3g2.html](https://xprgclr.github.io/tpt/regEX/bash.html)
 
