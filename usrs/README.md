@@ -2,7 +2,6 @@
 
 > Read time: 3 min
 
-- [\_USERS](#_users)
 - [Intro](#intro)
 - [Список юзеров](#список-юзеров)
 - [up-band](#up-band)
