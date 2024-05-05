@@ -1,0 +1,16 @@
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\bin\Debug\net6.0-windows\Starfield.exe
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\bin\Debug\net6.0-windows\Starfield.deps.json
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\bin\Debug\net6.0-windows\Starfield.runtimeconfig.json
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\bin\Debug\net6.0-windows\Starfield.dll
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\bin\Debug\net6.0-windows\Starfield.pdb
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.Form1.resources
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.csproj.GenerateResource.cache
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.AssemblyInfoInputs.cache
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.AssemblyInfo.cs
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.csproj.CoreCompileInputs.cache
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.dll
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\refint\Starfield.dll
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.pdb
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\Starfield.genruntimeconfig.cache
+C:\Users\Rom\Documents\_it\DOTNET\_c#\_FromOthers\Starfield\Starfield\obj\Debug\net6.0-windows\ref\Starfield.dll

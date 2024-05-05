@@ -1,0 +1,43 @@
+PS C:\Users\IT> 0..25 | % { 1 + $_ % 9 }
+
+01 | Bedrinski, Andrei        | 1  
+02 | Buzak, Artjom            | 2  
+03 | Ennukson, Rio            | 3  
+04 | Falalejev, Juri          | 4  
+05 | Gaskov, Artjom           | 5  
+06 | Gavrjušin, Dmitri        | 6  
+07 | Gorski, Roman            | 7  
+08 | Ivanov, Dmitri           | 8  
+09 | Kipus, Marika            | 9  
+10 | Klimov, Deevid           | 1  
+11 | Kovrova, Kristina        | 2  
+12 | Kozlov, Andrei           | 3  
+13 | Kuznetsov, Maksim        | 4  
+14 | Käär, Juri               | 5  
+15 | Lanberg, Vjatšeslav      | 6  
+16 | Lebedev, Vladimir        | 7  
+17 | Lõtšev, Martin Rostislav | 8  
+18 | Pavlov, Juri             | 9  
+19 | Pritykina, Aryna         | 1  
+20 | Prokopov, Sergei         | 2  
+21 | Rusin, Maksim            | 3  
+22 | Skazheniuk, Sofiia       | 4  
+23 | Suvorova, Aleksandra     | 5  
+24 | Tšapkovskaja, Polina     | 6  
+25 | Tšernobrivets, Anton     | 7  
+26 | Vural, Jelizaveta        | 8  
+
+in facter report show only your variant:
+
+  processors
+1   cores
+2   models
+3 partitions
+4 mac
+5 hostname
+6 dhcp
+  memory
+7   total
+8   available
+  disks
+9   size  

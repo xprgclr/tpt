@@ -1,0 +1,29 @@
+Linux to Linux using ssh key
+https://phoenixnap.com/kb/generate-ssh-key-debian-10
+Import second Debian2
+-- Add new user with home folder and shell
+-- useradd -s /bin/bash -m username
+$ useradd -s /bin/bash -m anna
+-- check where I am 
+pwd
+-- be another user
+su - anna
+-- Check that you are in user home
+pwd
+-- Show all in the current folder
+ls -al
+-- Create folder for ssh keys
+mkdir .ssh
+-- change folder right(only for user)
+chmod 700 .ssh
+-- generate keys
+ssh-keygen -b 4096
+-- On question answer "Enter"
+-- show generated keys
+ls -al .ssh
+-- copy public key to server
+ssh-copy-id anna@ssh-server-ip
+-- check on server part that 
+-- Connect to server with key by ssh
+ssh anna@ssh-server-ip
+

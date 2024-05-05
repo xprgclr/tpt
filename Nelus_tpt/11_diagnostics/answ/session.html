@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>fsd</title>
+  </head>
+  <body>
+    <div style="display:inline-block;white-space:pre;background-color:#0C0C0C;font-family:'Cascadia Mono',monospace;font-size:12pt;padding:4px;"><span
+style="color:#CCCCCC;background-color:#0C0C0C;">C:\Users\Roman&gt;ssh it@127.0.0.4<br>it@127.0.0.4's password:<br>Linux UFO 6.1.0-17-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.69-1 (2023-12-30) x86_64<br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms for each program are described in the<br>individual files in /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>Last login: Sun Feb  4 14:26:48 2024 from 10.0.2.2<br></span><span
+style="color:#16C60C;background-color:#0C0C0C;">it@UFO</span><span style="color:#CCCCCC;background-color:#0C0C0C;">:</span><span
+style="color:#3B78FF;background-color:#0C0C0C;">~</span><span style="color:#CCCCCC;background-color:#0C0C0C;">$ batcat keys.sh<br></span><span
+style="color:#444444;background-color:#0C0C0C;">───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br></span><span
+style="color:#CCCCCC;background-color:#0C0C0C;">       </span><span style="color:#444444;background-color:#0C0C0C;">│ </span><span
+style="color:#CCCCCC;background-color:#0C0C0C;">File: </span><span style="color:#F2F2F2;background-color:#0C0C0C;">keys.sh<br></span><span
+style="color:#444444;background-color:#0C0C0C;">───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br>   1   │ </span><span
+style="color:#767676;background-color:#0C0C0C;">#!/bin/bash<br></span><span style="color:#444444;background-color:#0C0C0C;">   2   │<br>   3   │ </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">if </span><span style="color:#5FD7FF;background-color:#0C0C0C;">[ </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"$UID" </span><span style="color:#FF8700;background-color:#0C0C0C;">-ne </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span style="color:#D7D787;background-color:#0C0C0C;">0</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">" </span><span style="color:#5FD7FF;background-color:#0C0C0C;">]<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   4   │ </span><span style="color:#FF5F5F;background-color:#0C0C0C;">then<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   5   │   </span><span style="color:#5FD7FF;background-color:#0C0C0C;">echo </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span style="color:#D7D787;background-color:#0C0C0C;">You are not root. Exiting..</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"<br></span><span style="color:#444444;background-color:#0C0C0C;">   6   │   </span><span
+style="color:#5FD7FF;background-color:#0C0C0C;">exit </span><span style="color:#FFFFFF;background-color:#0C0C0C;">1<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   7   │ </span><span style="color:#FF5F5F;background-color:#0C0C0C;">fi<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   8   │<br>   9   │ </span><span
+style="color:#5FD7FF;background-color:#0C0C0C;">set </span><span style="color:#FF8700;background-color:#0C0C0C;">-x<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  10   │<br>  11   │ </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">ssh-keygen </span><span style="color:#FF8700;background-color:#0C0C0C;">-t </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">rsa </span><span style="color:#FF8700;background-color:#0C0C0C;">-b </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">2048<br></span><span style="color:#444444;background-color:#0C0C0C;">  12   │ </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">cat ~/.ssh/id_rsa.pub </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">| </span><span style="color:#FFFFFF;background-color:#0C0C0C;">\<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  13   │      </span><span style="color:#FFFFFF;background-color:#0C0C0C;">ssh it@10.0.2.5 \<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  14   │        </span><span style="color:#FFFFFF;background-color:#0C0C0C;">'</span><span
+style="color:#D7D787;background-color:#0C0C0C;">mkdir -p ~/.ssh; cat &gt; ~/.ssh/authorized_keys</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">'<br></span><span style="color:#444444;background-color:#0C0C0C;">  15   │<br>  16   │ </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">cat ~/.ssh/id_rsa.pub </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">| </span><span style="color:#FFFFFF;background-color:#0C0C0C;">\<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  17   │      </span><span style="color:#FFFFFF;background-color:#0C0C0C;">ssh it@10.0.2.6 \<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  18   │        </span><span style="color:#FFFFFF;background-color:#0C0C0C;">'</span><span
+style="color:#D7D787;background-color:#0C0C0C;">mkdir -p ~/.ssh; cat &gt; ~/.ssh/authorized_keys</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">'<br></span><span style="color:#444444;background-color:#0C0C0C;">───────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br></span><span
+style="color:#16C60C;background-color:#0C0C0C;">it@UFO</span><span style="color:#CCCCCC;background-color:#0C0C0C;">:</span><span
+style="color:#3B78FF;background-color:#0C0C0C;">~</span><span style="color:#CCCCCC;background-color:#0C0C0C;">$ batcat scan.sh<br></span><span
+style="color:#444444;background-color:#0C0C0C;">───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br></span><span
+style="color:#CCCCCC;background-color:#0C0C0C;">       </span><span style="color:#444444;background-color:#0C0C0C;">│ </span><span
+style="color:#CCCCCC;background-color:#0C0C0C;">File: </span><span style="color:#F2F2F2;background-color:#0C0C0C;">scan.sh<br></span><span
+style="color:#444444;background-color:#0C0C0C;">───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br>   1   │ </span><span
+style="color:#767676;background-color:#0C0C0C;">#!/bin/bash<br></span><span style="color:#444444;background-color:#0C0C0C;">   2   │<br>   3   │ </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">if </span><span style="color:#5FD7FF;background-color:#0C0C0C;">[ </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"$UID" </span><span style="color:#FF8700;background-color:#0C0C0C;">-ne </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span style="color:#D7D787;background-color:#0C0C0C;">0</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">" </span><span style="color:#5FD7FF;background-color:#0C0C0C;">]<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   4   │ </span><span style="color:#FF5F5F;background-color:#0C0C0C;">then<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   5   │   </span><span style="color:#5FD7FF;background-color:#0C0C0C;">echo </span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span style="color:#D7D787;background-color:#0C0C0C;">You are not root. Exiting..</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">"<br></span><span style="color:#444444;background-color:#0C0C0C;">   6   │   </span><span
+style="color:#5FD7FF;background-color:#0C0C0C;">exit </span><span style="color:#FFFFFF;background-color:#0C0C0C;">1<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   7   │ </span><span style="color:#FF5F5F;background-color:#0C0C0C;">fi<br></span><span
+style="color:#444444;background-color:#0C0C0C;">   8   │<br>   9   │ </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">for </span><span style="color:#FFFFFF;background-color:#0C0C0C;">i </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">in </span><span style="color:#FFFFFF;background-color:#0C0C0C;">$(nmap </span><span
+style="color:#FF8700;background-color:#0C0C0C;">-sP </span><span style="color:#FFFFFF;background-color:#0C0C0C;">10.0.2.0/28 </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">| </span><span style="color:#FFFFFF;background-color:#0C0C0C;">grep "</span><span
+style="color:#D7D787;background-color:#0C0C0C;">^Nmap s</span><span style="color:#FFFFFF;background-color:#0C0C0C;">" </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">| </span><span style="color:#FFFFFF;background-color:#0C0C0C;">\<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  10   │   </span><span style="color:#FFFFFF;background-color:#0C0C0C;">grep </span><span
+style="color:#FF8700;background-color:#0C0C0C;">-v </span><span style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span
+style="color:#D7D787;background-color:#0C0C0C;">\.[123]$</span><span style="color:#FFFFFF;background-color:#0C0C0C;">" </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">| </span><span style="color:#FFFFFF;background-color:#0C0C0C;">grep </span><span
+style="color:#FF8700;background-color:#0C0C0C;">-v </span><span style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span
+style="color:#D7D787;background-color:#0C0C0C;">\.15</span><span style="color:#FFFFFF;background-color:#0C0C0C;">" </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">| </span><span style="color:#FFFFFF;background-color:#0C0C0C;">\<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  11   │   </span><span style="color:#FFFFFF;background-color:#0C0C0C;">grep </span><span
+style="color:#FF8700;background-color:#0C0C0C;">-Po </span><span style="color:#FFFFFF;background-color:#0C0C0C;">"</span><span
+style="color:#D7D787;background-color:#0C0C0C;">([0-9]+\.?){4}</span><span style="color:#FFFFFF;background-color:#0C0C0C;">")<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  12   │ </span><span style="color:#FF5F5F;background-color:#0C0C0C;">do<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  13   │    </span><span style="color:#FFFFFF;background-color:#0C0C0C;">ssh it@$i '</span><span
+style="color:#D7D787;background-color:#0C0C0C;">hostname; facter | \<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  14   │       </span><span style="color:#D7D787;background-color:#0C0C0C;">grep -A 20 "memory =&gt;" | \<br></span><span
+style="color:#444444;background-color:#0C0C0C;">  15   │       </span><span style="color:#D7D787;background-color:#0C0C0C;">grep -A 10 "system =&gt;" | grep "total =&gt;"</span><span
+style="color:#FFFFFF;background-color:#0C0C0C;">'<br></span><span style="color:#444444;background-color:#0C0C0C;">  16   │ </span><span
+style="color:#FF5F5F;background-color:#0C0C0C;">done<br></span><span style="color:#444444;background-color:#0C0C0C;">───────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br></span><span
+style="color:#16C60C;background-color:#0C0C0C;">it@UFO</span><span style="color:#CCCCCC;background-color:#0C0C0C;">:</span><span
+style="color:#3B78FF;background-color:#0C0C0C;">~</span><span style="color:#CCCCCC;background-color:#0C0C0C;">$ sudo ./keys.sh<br>[sudo] password for it:<br>+ ssh-keygen -t rsa -b 2048<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/root/.ssh/id_rsa):<br>/root/.ssh/id_rsa already exists.<br>Overwrite (y/n)? n<br>+ cat /root/.ssh/id_rsa.pub<br>+ ssh it@10.0.2.5 'mkdir -p ~/.ssh; cat &gt; ~/.ssh/authorized_keys'<br>+ cat /root/.ssh/id_rsa.pub<br>+ ssh it@10.0.2.6 'mkdir -p ~/.ssh; cat &gt; ~/.ssh/authorized_keys'<br></span><span
+style="color:#16C60C;background-color:#0C0C0C;">it@UFO</span><span style="color:#CCCCCC;background-color:#0C0C0C;">:</span><span
+style="color:#3B78FF;background-color:#0C0C0C;">~</span><span style="color:#CCCCCC;background-color:#0C0C0C;">$ sudo ./scan.sh<br>clone1<br>    total =&gt; "960.09 MiB",<br>clone2<br>    total =&gt; "1.92 GiB",<br>UFO<br>    total =&gt; "3.82 GiB",<br></span><span
+style="color:#16C60C;background-color:#0C0C0C;">it@UFO</span><span style="color:#CCCCCC;background-color:#0C0C0C;">:</span><span
+style="color:#3B78FF;background-color:#0C0C0C;">~</span><span style="color:#CCCCCC;background-color:#0C0C0C;">$</span></div>
+  </body>
+</html>

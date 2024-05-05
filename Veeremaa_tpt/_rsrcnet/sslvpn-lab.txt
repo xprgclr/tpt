@@ -1,0 +1,102 @@
+Packet Tracer lab 16 : Clientless SSL VPN
+
+https://www.packettracernetwork.com/labs/lab16-asa-webvpn.html
+
+Connect from Laptop to switch fa0/1
+Connect from switch fa0/2 to ASA5505 et0/0
+Connect server to et0/1(or to any of et0/1-7) 
+
+set laptop ip=192.168.1.2/24, gw=192.168.1.1
+set server ip=192.168.2.3/24, gw=192.168.2.1
+
+-- Enter in ASA5505 "Config" menu "Bookmark Manager"
+  Title: "site1"
+  URL: http://192.168.2.3
+
+Login to ASA5505 console
+
+>enable
+-- When ask for pass simply push "Enter"
+#conf t
+
+--- Copy-Paste configuration below to ASA5505
+no dhcpd auto_config outside
+!
+no dhcpd address 192.168.1.5-192.168.1.36 inside
+no dhcpd enable inside
+
+interface Vlan1
+ nameif inside
+ security-level 100
+ no ip address 192.168.1.1 255.255.255.0
+ ip address 192.168.2.1 255.255.255.0
+!
+interface Vlan2
+ nameif outside
+ security-level 0
+ ip address 192.168.1.1 255.255.255.0
+!
+webvpn
+ enable outside
+object network LAN
+ subnet 192.168.2.0 255.255.255.0
+!
+object network LAN
+ nat (inside,outside) dynamic interface
+!
+group-policy group1 internal
+group-policy group1 attributes
+ vpn-tunnel-protocol ssl-clientless
+ webvpn
+  url-list value site1
+tunnel-group uuu type remote-access
+ tunnel-group uuu general-attributes
+ default-group-policy group1
+username test password D35rLrqYJOMRHDCX encrypted
+username test attributes
+ vpn-group-policy group1
+!
+!_________________________________________________
+
+-- Select user "test" and select "site1" for him
+
+connect from web browser on Laptop to address https://192.168.1.1
+enter username:test
+and password: test.test
+
+You will see SSL VPN client portal.
+Under line you will see "site1"
+Push to this link and web page of Server will be shown.
+
+______________________________
+
+Peale selle kui saate käima esimese saidi võite lisada järgmisesse vabasse ASA5505 porti
+uue serveri järgmise vaba IP-ga.
+Ja lisatud serveri/saidi jaoks tuleks teha teise group-policy grupi, url listi ja kasutaja
+
+group-policy group1 internal
+group-policy group1 attributes
+ vpn-tunnel-protocol ssl-clientless
+ webvpn
+  url-list value site1
+group-policy group2 internal
+group-policy group2 attributes
+ vpn-tunnel-protocol ssl-clientless
+ webvpn
+  url-list value site2
+username test password D35rLrqYJOMRHDCX encrypted
+username test attributes
+ vpn-group-policy group1
+username test2 password D35rLrqYJOMRHDCX encrypted
+username test2 attributes
+ vpn-group-policy group2
+
+
+Open Laptop
+Connect through browser to gateway https://192.168.1.1
+ASA will ask you for login password
+user: test
+pass: test.test
+
+You'v get in Cisco
+Show teacher

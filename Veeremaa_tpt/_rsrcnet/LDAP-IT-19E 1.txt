@@ -1,0 +1,61 @@
+﻿Directors and LDAP 
+
+https://www.8host.com/blog/osnovy-protokola-ldap-ierarxiya-dannyx-i-komponenty-zapisej/ 
+
+Standard ports: 
+ldap 389 
+ldaps 636 
+ldapadmin 443 https 
+web shell 12320 
+webmin    12321 
+
+Example of dn for domain name tpt.edu.ee  -->  dc=tpt,dc=edu,dc=ee   
+
+Download OVA image from https://www.turnkeylinux.org/openldap 
+
+Import to VirtualBox,  
+set domain name as “$PERENIMI.tpt”; 
+set simple password; 
+SKIP entering API key/token; 
+Skip entering email. 
+
+Open in browser  https://LDAPSERVERIP 
+Login as admin using entered previously password 
+
+In task use you surname in dn. My name is for example. 
+
+Install or use other linux/Debian cli 
+
+Create ldap dn: dc=perenimi,dc=tpt 
+Open Debian linux commandline and enter: 
+Enter some usable queries to ldap: 
+
+root@debian:~# ldapsearch -x -H ldap://LDAPSERVERIP:389 -b "dc=perenimi,dc=tpt" 
+
+root@debian:~# ldapsearch -x -H ldap://LDAPSERVERIP:389 -b "dc=veeremaa,dc=tpt" -s base '(objectclass=*)' + 
+
+dn:  cn=Admin,dc=veeremaa,dc=tpt 
+dn:  ou=Users,dc=perenimi,dc=tpt 
+dn:  cn=Fedja Putin,ou=Users,dc= perenimi,dc=tpt 
+
+TASK 
+
+Create in LDAP admin portal new "User Account" with you "Name Surname" in "ou=Users,dc=perenimi,dc=tpt" 
+Enter a simple password with md5 
+GID Number select users 
+Login shell: csh or bash 
+
+Add a second user as your class neighbourg  
+
+From other linux send ldap request: 
+
+root@debian:~#  ldapsearch -x -H ldap://LDAPSERVERIP:389 -b "cn=YouName,ou=Users,dc=perenimi,dc=tpt" -s base '(objectclass=*)' 
+
+root@debian:~#  ldapsearch -x -H ldap://LDAPSERVERIP:389 -b "cn=YouClassNeighborName,ou=Users,dc=perenimi,dc=tpt" -s base '(objectclass=*)' 
+
+Select your User and "Add new attribute": select from dropdown ‘telephoneNumber’ 
+Repeate ldapseacrh query for your Account and you will see telephone number attribute. 
+
+Add telephoneNumber to other user too. 
+
+Show LdapAdmin page and queries from linux to teacher. 

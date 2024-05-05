@@ -1,0 +1,106 @@
+PPTP and L2TP server on mikrotik
+connect from virtual Win10
+WIN10 -> Mikrotik -> Debian10
+
+-- setup ether2 as gateway for internal network:
+IP->addresses->+
+ Address: 10.10.10.1/24
+ Network: 10.10.10.0
+ Interface: ether2
+
+IP->DHCP->server->Networks->+
+ Address: 10.10.10.0/24
+ Gateway: 10.10.10.1
+ Netmask: 24
+ DNS Servers: 10.10.10.1
+ Domain: myown.local
+ NTP Servers: 10.10.10.1
+
+IP->Pool->+
+ Addresses: 10.10.10.10-10.10.10.99
+
+IP->DHCP->Server->DHCP->+
+ in tab Generic:
+ Interface: ether2
+ Address Pool: pool1
+
+IP -> Firewall -> NAT : General->'+'
+ Chain = srcnat
+ Out.Interface = ether1
+ NAT : Action
+ Action = masquerade
+
+IP -> DNS
+ push: Settings
+ Allow Remote Requests = check box
+
+_________________________________
+PPTP SERVER
+
+PPP -> Profiles
+ Name = vadim-pptp
+ Bridge Learning = yes
+ Change TCP MSS = yes
+ 
+PPP -> PPTP Server
+ enabled = check box
+ Authentication = mschap2  only!
+
+PPP -> Secrets -> +
+ Name = vadim-pptp
+ Password = *******
+ Service = pptp
+ Profile = vadim-pptp
+ Local Address = 172.30.30.1
+  Remote Address = 172.30.30.10
+  
+ WINDOWS 10
+ VPN Settings
+ + Add a VPN connection
+  VPN provider = Windows(built-in)
+  Connection name = vadim-pptp
+  Server name or address = 172.16.2.41    (Mikrotik ether1 IP)
+  VPN type = PPTP
+  Type of sign-info = User name and password
+  User name = vadim-pptp    (same as secret in mikrotik pptp)
+  Password = ******   (same as secret in mikrotik pptp)
+  
+ Push vadim-pptp (connection name)
+  Connect
+__________________________________
+
+L2TP SERVER
+IP->Pool->+
+ Name = pool-VPN
+ Addresses = 172.30.30.100-172.30.30.200
+PPP -> PPP profile
+ name profile-l2tp 
+ Local Address = 172.30.30.1
+ Remote Address = pool-VPN
+ DNS Server = 172.16.2.41, 8.8.8.8
+PPP -> Secret -> '+'
+ Name = vadim-l2tp
+ Password = ******
+ Service = l2tp
+ Profile = profile-l2tp
+PPP -> L2TP Server (button)
+ Enabled = check box
+ Use IPsec = yes
+ IPsec Secret = ****** 
+
+ WINDOWS 10
+ VPN Settings
+ + Add a VPN connection
+  VPN provider = Windows(built-in)
+  Connection name = vadim-l2tp
+  Server name or address = 172.16.2.41    (Mikrotik ether1 IP)
+  VPN type = L2TP
+  Pre-shared key = *******  (same as IPsec secret in mikrotik l2tp Server)
+  Type of sign-info = User name and password
+  User name = vadim-l2tp    (same as secret in mikrotik l2tp)
+  Password = ******   (same as secret in mikrotik l2tp)
+  
+ Push vadim-pptp (connection name)
+  Connect
+
+___________________________________

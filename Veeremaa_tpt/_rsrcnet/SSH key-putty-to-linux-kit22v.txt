@@ -1,0 +1,38 @@
+https://bitlaunch.io/blog/how-to-connect-to-ssh-with-putty/
+ssh it@172.16.2.19
+
+-- login as "root" user from ordinary user
+# sudo su -
+-- or
+# sudo -i
+
+-- add new user with you name
+$ useradd -s /bin/bash -m tiit
+-- incarbate to tiit
+$ su tiit
+-- go HOME
+# cd $HOME
+-- create folder for ssh-keys
+# mkdir .ssh
+-- Check directory existance
+# ls -l
+-- Change folder access mode(rwx permitions only fo root)
+# cd 
+# chmod 700 .ssh
+-- go .ssh folder
+# cd .ssh
+-- create file for ssh keys
+# touch authorized_keys
+-- edit that file
+# nano authorized_keys
+-- copy from Puttygen 1-st box Public key for OpenSSH to .ssh/authorized_keys
+-- where I am (print working directory)
+# pwd
+-- paste public key, and save it
+# chmod 600 /home/tiit/.ssh/authorized_keys
+
+
+
+-- kustuta kasutaja kui vaja
+$ userdel vadim
+

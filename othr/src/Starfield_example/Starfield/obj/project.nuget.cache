@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "g7yGHu2M6mN5Fus1NzUCZolXKb28vNW7xqbYUjyfCuYV8hbGt2WU0BPJ74UYGv9d9g8bDvcpB8jm5MG2D7LThQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rom\\Documents\\_it\\DOTNET\\_c#\\_FromOthers\\Starfield\\Starfield\\Starfield.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Rom\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Rom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Rom\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}
