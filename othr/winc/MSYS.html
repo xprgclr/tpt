@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&Kcy;&ocy;&mcy;&pcy;&icy;&lcy;&icy;&mcy; C &pcy;&ocy;&dcy; &vcy;&icy;&ncy;&dcy;&ucy; &scy; graphics &icy; emscripten</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension foam.foam-vscode */
+.foam-placeholder-link {
+  color: var(--vscode-editorWarning-foreground);
+  cursor: default;
+}
+
+.foam-note-link,
+.foam-attachment-link {
+  color: var(--vscode-textLink-foreground);
+}
+
+.foam-tag {
+  color: var(--vscode-editorLineNumber-foreground);
+}
+
+.foam-cyclic-link-warning {
+  background-color: var(--vscode-editorError-background);
+  color: var(--vscode-editorError-foreground);
+}
+
+.embed-container-note {
+  padding: 0.5em;
+  margin: 1.5em 0;
+  border: 1px solid var(--vscode-editorLineNumber-foreground);
+}
+
+.embed-container-attachment {
+  padding: 0.25em;
+  margin: 1.5em 0;
+  text-align: center;
+  border: 1px solid var(--vscode-editorLineNumber-foreground);
+}
+
+.embed-container-image {
+  margin: auto;
+  padding: 0.25em;
+  text-align: center;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="компилим-c-под-винду-с-graphics-и-emscripten">Компилим C под винду с graphics и emscripten</h1>
+<ul>
+<li><a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D0%B8%D0%BC-c-%D0%BF%D0%BE%D0%B4-%D0%B2%D0%B8%D0%BD%D0%B4%D1%83-%D1%81-graphics-%D0%B8-emscripten">Компилим C под винду с graphics и emscripten</a>
+<ul>
+<li><a href="#%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D0%BC-%D1%82%D1%83%D0%BB%D1%87%D0%B5%D0%B9%D0%BD">Ставим тулчейн</a></li>
+<li><a href="#%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D0%BC-sdl_bgi">Ставим SDL_bgi</a></li>
+<li><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%B0%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC">Настраиваем</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="ставим-тулчейн">Ставим тулчейн</h2>
+<p>RTFM:<br>
+<a href="https://code.visualstudio.com/docs/cpp/config-mingw">https://code.visualstudio.com/docs/cpp/config-mingw</a><br>
+<a href="https://metanit.com/c/tutorial/1.2.php">https://metanit.com/c/tutorial/1.2.php</a></p>
+<p>Если кратко, то:</p>
+<ol>
+<li>Ставим <a href="https://code.visualstudio.com/">VSCode</a></li>
+<li>Ставим <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">Расширение</a> для VSCode</li>
+<li>Ставим <a href="https://www.msys2.org/">MSYS2</a>
+<ol>
+<li>Запускаем MSYS2.exe и ставим тулчейн:<br>
+<code>pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain</code><br>
+( Кстати в <a href="https://metanit.com/c/tutorial/1.2.php">гайде от metanit</a> указывается что можно заюзать и <code>pacman -S mingw-w64-ucrt-x86_64-gcc</code>, в случае с Pure C )</li>
+<li>Добавляем путь <code>C:\msys64\ucrt64\bin</code> в PATH настройках Windows</li>
+<li>Тестим:</li>
+</ol>
+</li>
+</ol>
+<pre><code>gcc --version
+g++ --version
+gdb --version
+</code></pre>
+<p><img src="file:///c:\Users\Rom\Desktop\msys\image.png" alt="alt text"></p>
+<ol start="4">
+<li>Создаем C исходник и компилим. (F5&gt;GDB&gt;gcc)</li>
+</ol>
+<pre><code class="language-c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span>           </span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>                     
+{                                   
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello METANIT.COM!\n&quot;</span>); 
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;                      
+}  
+</code></pre>
+<h2 id="ставим-sdl_bgi">Ставим SDL_bgi</h2>
+<ul>
+<li>
+<p>Ставим SDL2. (P.S: В старых гайдах указаны папки/пути <code>mingw64</code>, у меня заменено на <code>ucrt64</code> )
+<code>pacman -Suy</code><br>
+<code>pacman -S mingw-w64-ucrt-x86_64-SDL2</code></p>
+</li>
+<li>
+<p>Читаем <a href="https://sdl-bgi.sourceforge.io/">The SDL_bgi Library</a> и качаем - <a href="https://sourceforge.net/projects/sdl-bgi/files/SDL_bgi-3.0.0-win.zip">https://sourceforge.net/projects/sdl-bgi/files/SDL_bgi-3.0.0-win.zip</a>. Внутри архива есть более подробная документация и manuals. Если кратко:</p>
+</li>
+</ul>
+<p>SDL_bgi Library ( SDL_bgi-3.x.x-win.zip ):</p>
+<pre><code class="language-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">set</span> -x
+<span class="hljs-built_in">cp</span> src/graphics.h /ucrt64/include/
+<span class="hljs-built_in">cp</span> src/SDL_bgi.h /ucrt64/include/SDL2/
+<span class="hljs-built_in">cp</span> bin/MSYS2/SDL_bgi.dll /ucrt64/bin
+
+</code></pre>
+<h2 id="настраиваем">Настраиваем</h2>
+<ul>
+<li>
+<p>Следуя докам по сайту <strong>graphics.h</strong> должен быть указан в include, и при компиляции должны быть следущие параметры:<br>
+<code>gcc -o program.exe program.c -lmingw32 -L/ucrt64/bin -lSDL_bgi -lSDL2main -lSDL2 # -mwindows</code></p>
+</li>
+<li>
+<p>Меняем <strong>task.json</strong> &quot;проекта&quot; в подкалатоге <em>.vscode</em></p>
+</li>
+</ul>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;tasks&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cppbuild&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;label&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C/C++: gcc.exe build active file&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C:\\msys64\\ucrt64\\bin\\gcc.exe&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;-fdiagnostics-color=always&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-g&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;${file}&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-o&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-lmingw32&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-L&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;C:\\msys64\\ucrt64\\bin&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-lSDL_bgi&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-lSDL2main&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;-lSDL2&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-comment">//&quot;-mwindows&quot;</span>
+            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                <span class="hljs-attr">&quot;cwd&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;${fileDirname}&quot;</span>
+            <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;problemMatcher&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-string">&quot;$gcc&quot;</span>
+            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;group&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                <span class="hljs-attr">&quot;kind&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;build&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;isDefault&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span>
+            <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;detail&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Task generated by Debugger.&quot;</span>
+        <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.0.0&quot;</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<ul>
+<li>Берем например из папки test, примеры исходников и компилим их.</li>
+</ul>
+<pre><code class="language-c">  <span class="hljs-comment">/* circle example */</span>
+
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;graphics.h&gt;</span></span>
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span>
+{
+  <span class="hljs-comment">/* request autodetection */</span>
+  <span class="hljs-type">int</span> gdriver = DETECT, gmode;
+  <span class="hljs-type">int</span> midx, midy, radius = <span class="hljs-number">100</span>;
+
+  <span class="hljs-comment">/* initialize graphics and local variables */</span>
+  initgraph(&amp;gdriver, &amp;gmode, <span class="hljs-string">&quot;C:\\TC\\BGI&quot;</span>);
+
+  midx = getmaxx() / <span class="hljs-number">2</span>;
+  midy = getmaxy() / <span class="hljs-number">2</span>;
+  setcolor(getmaxcolor());
+
+  <span class="hljs-comment">/* draw the circle */</span>
+  circle(midx, midy, radius);
+
+  <span class="hljs-comment">/* clean up */</span>
+  getch();
+  closegraph();
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<ul>
+<li>Компилим. Done.  ( Примечание для запуска вне среды MSYS нужно чтобы dllки <strong>SDL_bgi.dll</strong> и <strong>SDL2.dll</strong> были в папке с исходником. )
+<img src="file:///c:\Users\Rom\Desktop\msys\image-1.png" alt="alt text"></li>
+</ul>
+<hr>
+<ul>
+<li>Качам сам emscripten
+<code>pacman -S mingw-w64-ucrt-x86_64-emscripten</code></li>
+</ul>
+<hr>
+<ul>
+<li>идём в msys</li>
+</ul>
+<pre><code>$ cd src/
+src/$ make wasm
+*** Building on Linux ***
+...
+src/$ make clean
+</code></pre>
+<p>Ставим python
+<code>pacman -S mingw-w64-ucrt-x86_64-python</code></p>
+<p>Ставим git
+<code>pacman -S git</code>
+git clone <a href="https://github.com/emscripten-core/emsdk.git">https://github.com/emscripten-core/emsdk.git</a></p>
+<p>заходим в ucrt64</p>
+<p>git clone <a href="https://github.com/emscripten-core/emsdk.git">https://github.com/emscripten-core/emsdk.git</a>
+cd emsdk
+git pull
+./emsdk install latest
+./emsdk activate latest
+source ./emsdk_env.sh</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
