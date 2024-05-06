@@ -57,6 +57,10 @@ https://itmaili.weebly.com/
 
 ## Not TPT tmp:
 - [PDFtoDjvu](othr/PdfToDjvu/README.md)
+- [Компилим C/C++ под винду с graphics.h (sdl_bgi)](othr/winc/1_MSYS.md)
+  - [EmScripten](othr/winc/2_emscripten.md)
+
+src's:
 - [canvas/script.js](othr/src/canvas/script.js)
 - [tbHndlr/script.js](othr/src/tbHndlr/script.js)
 - [Xor/script.js](othr/src/Xor/script.js)
