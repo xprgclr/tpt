@@ -37,7 +37,7 @@ dism /Get-WimInfo /WimFile:install.esd
 
 от админа
 
-распаковать по индексу я так понл
+распаковать по индексу
 dism /export-image /SourceImageFile:install.esd /SourceIndex:4 /DestinationImageFile:install.wim /Compress:max /CheckIntegrity
 
 *******

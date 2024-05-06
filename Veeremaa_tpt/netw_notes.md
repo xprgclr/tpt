@@ -4,7 +4,8 @@
 - [10.04.2024 Operatsioonisüsteemide sidumine II](#10042024-operatsioonisüsteemide-sidumine-ii)
 - [22.04.2024 Kohtvõrgu komponentide paigaldus III](#22042024-kohtvõrgu-komponentide-paigaldus-iii)
 - [24.04.2024  Operatsioonisüsteemide sidumine III](#24042024--operatsioonisüsteemide-sidumine-iii)
-- [Actual](#actual)
+- [06.05.2024](#06052024)
+- [\_](#_)
 
 
 
@@ -99,23 +100,25 @@ pptp VPN
 - https://phoenixnap.com/kb/generate-ssh-key-debian-10
 
 
+## 06.05.2024 
+
+- http://veeremaa.tpt.edu.ee/2011/nfs-lab.htm
+- [nfs-labor-kit23e.txt](_rsrcnet/nfs-labor-kit23e.txt)
+
+https://github.com/xprgclr/tpt
+
+apt install net-tools
+netstat -antp
 
 
-## Actual
+sudo su -
+hostname SERVER|CLIENT
+logout
+df -a
+umount /lug
+ps
 
-
-- https://itmaili.weebly.com/wds.html
-
-- http://veeremaa.tpt.edu.ee/2013/wds-lab.html
-
-- [Win7.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/EecxBdctQixFq33LzSn8P0YBBlL68d9K-kKOWjiSnh21Kg?e=ClqdzE)
-- [Win10.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/EYNbBNtcaxhDngt-1dG1m0sBkOrhoksyuaMXleLo5jPAgg?e=emwW4w)
-- [Server 2019.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/EdqSmaG7u8NLsIUznQpgIg0Ba3dJ2mBjYbNZ2g-UeO4IzA?e=I3g86D)
-- [Server 2016.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/Ef41eSnjqmRElhYx65SGfqkB5dukfyrBwYtR2zsmFirXRQ?e=fIu2Tt)
-
-
-
-
+## _
 
 -----------------------------------------------------------
 

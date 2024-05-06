@@ -32,41 +32,51 @@
 
 ### OThr Notes:
 - [Cisco CLI](CCNA_tpt/README.md)
-- [Win Notes](Veeremaa_tpt/win_notes.md)
-- [Net.Notes](Veeremaa_tpt/netw_notes.md)
-- [OSes Tasks](Krusell_tpt/README.md)
+- Vadim:
+[[Win Notes]](Veeremaa_tpt/win_notes.md)
+[[Net.Notes]](Veeremaa_tpt/netw_notes.md)
+- [OSes Tasks](Krusell_tpt/README.md)  
 
-### src's:
-- [light.asm](Krusell_tpt/_rsrc/light.asm)
-- [snake_keypad_task28.asm](Krusell_tpt/_rsrc/snake_keypad_task28.asm)
-- [anim.cpp](Krusell_tpt/_rsrc/main.cpp) | [[*.GIF]](Krusell_tpt/_rsrc/main.gif)
-  - [animv2.cpp](Krusell_tpt/_rsrc/main_03032024.cpp)  | [[*.GIF]](Krusell_tpt/_rsrc/main_03032024.gif)
-- [batch.sh](Nelus_tpt/4_pwsh/_rsrc/batch.sh)
-- [daemon_up.sh](Nelus_tpt/6_daemon/_rsrc/daemon_up.sh)
-- [router_up.sh](Nelus_tpt/7_gateway/_rsrc/router_up.sh)
-- [apache_up.sh](Nelus_tpt/8_WSGUI/_answ/apache_up.sh)
+**_Links:**
+[[kirill.tpt.edu.ee]](http://kirill.tpt.edu.ee/)
+[[veeremaa.tpt.edu.ee]](http://veeremaa.tpt.edu.ee/)
+[[www.e-ope.usp.ee]](http://www.e-ope.usp.ee/dokeos2/) 
+[[scrumpoker.eu]](https://scrumpoker.eu/oppeained-2023-2024-2/)
+[[itmaili.weebly.com]](https://itmaili.weebly.com/)
 
-### Links: 
-http://kirill.tpt.edu.ee/  
-http://veeremaa.tpt.edu.ee/  
-http://www.e-ope.usp.ee/dokeos2/  
-https://scrumpoker.eu/oppeained-2023-2024-2/  
-https://itmaili.weebly.com/  
+### Src's:
+
+**\*.sh:** [[batch.sh]](Nelus_tpt/4_pwsh/_rsrc/batch.sh)
+[[daemon_up.sh]](Nelus_tpt/6_daemon/_rsrc/daemon_up.sh)
+[[router_up.sh]](Nelus_tpt/7_gateway/_rsrc/router_up.sh)
+[[apache_up.sh]](Nelus_tpt/8_WSGUI/_answ/apache_up.sh)
+
+**mix:**
+[[light.asm]](Krusell_tpt/_rsrc/light.asm)
+[[snake_keypad_task28.asm]](Krusell_tpt/_rsrc/snake_keypad_task28.asm)
+- [anim.cpp](Krusell_tpt/_rsrc/main.cpp) | [[*.GIF]](Krusell_tpt/_rsrc/main.gif)  ---->
+[animv2.cpp](Krusell_tpt/_rsrc/main_03032024.cpp)  | [[*.GIF]](Krusell_tpt/_rsrc/main_03032024.gif)  
+
+
 
 ***
+***
+***
 
-## Not TPT tmp:
-- [PDFtoDjvu](othr/PdfToDjvu/README.md)
-- [Компилим C/C++ под винду с graphics.h (sdl_bgi)](othr/winc/1_MSYS.md)
-  - [EmScripten](othr/winc/2_emscripten.md)
+## Not TPT / tmp:
+- [PDF vs Djvu compare](othr/PdfToDjvu/README.md)
+- [Компилим C/C++ под винду с graphics.h ( win vscode msys2 gcc sdl_bgi )](othr/winc/1_MSYS.md)
+  - [EmScripten ( vscode ssh debian apache emsdk )](othr/winc/2_emscripten.md)
 
-src's:
+**&src's:**
 - [canvas/script.js](othr/src/canvas/script.js)
 - [tbHndlr/script.js](othr/src/tbHndlr/script.js)
 - [Xor/script.js](othr/src/Xor/script.js)
 - [painttasm.ASM](othr/src/painttasm.ASM)
 - [Starfield/Form1.cs](othr/src/Starfield_example/Starfield/Form1.cs)
 
+
+***
 
 
 

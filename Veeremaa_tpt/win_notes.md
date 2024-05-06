@@ -10,6 +10,7 @@
 - [28.02.2024 Windows disgnostika](#28022024-windows-disgnostika)
 - [11.03.2024 Windows disgnostika](#11032024-windows-disgnostika)
 - [13.03.2024 Windows teenused](#13032024-windows-teenused)
+- [tmp](#tmp)
 
 
 **************************************
@@ -116,4 +117,15 @@ https://tptliveee-my.sharepoint.com/:w:/g/personal/info_tptlive_ee/EXh9cyWsCspKl
 ## 13.03.2024 Windows teenused
 -//- 
 
+- https://itmaili.weebly.com/wds.html
+
+- http://veeremaa.tpt.edu.ee/2013/wds-lab.html
+
 ***
+
+## tmp
+
+- [Win7.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/EecxBdctQixFq33LzSn8P0YBBlL68d9K-kKOWjiSnh21Kg?e=ClqdzE)
+- [Win10.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/EYNbBNtcaxhDngt-1dG1m0sBkOrhoksyuaMXleLo5jPAgg?e=emwW4w)
+- [Server 2019.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/EdqSmaG7u8NLsIUznQpgIg0Ba3dJ2mBjYbNZ2g-UeO4IzA?e=I3g86D)
+- [Server 2016.ova](https://tptliveee-my.sharepoint.com/:u:/g/personal/vadim_veeremaa_tptlive_ee/Ef41eSnjqmRElhYx65SGfqkB5dukfyrBwYtR2zsmFirXRQ?e=fIu2Tt)

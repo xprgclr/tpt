@@ -1,0 +1,63 @@
+NFS SERVERI OSA
+Firewall Ports for NFS
+Kui sul on sisselülitatud firewall siis sa pead avama järgmised pordid 32771, 111, 2049
+
+NB! Täita root kasutaja õigustes
+
+Kui pole installitud installime vajaliku tarkvara:
+# apt-get install nfs-kernel-server
+Restardime NFS serveri
+# /etc/init.d/nfs-kernel-server restart
+
+NB! Iga rühm kasutab lehe lõpus oma exporditavate katalogide nimed
+Loome exporditavad katalogid failsüsteemis, näiteks
+# mkdir /read /write
+
+Muudame faili /etc/exports sisu:
+/write <YOULOCALNETIP>/24(rw,insecure,no_root_squash,sync,no_subtree_check)
+/read  <YOULOCALNETIP>/24(ro,insecure,sync,no_subtree_check)
+
+Kui muudad /etc/exports faili, kaivita:
+# exportfs -a
+
+Vadata exporditud kataloge saab nii:
+# showmount -e localhost
+/read <YOULOCALNETIP>/24
+/write <YOULOCALNETIP>/24
+
+Paiguta mõlemasse katalogi paar faili mingi sisuga: fail1, fail2, fail3
+
+ 
+
+NFS KLIENDI OSA
+
+Täita enamasti kasutaja õigustes
+Installime vajalikud pakid
+% sudo apt-get install portmap nfs-common
+% sudo /etc/init.d/portmap restart
+võib olla ka % sudo /etc/init.d/nfs-common restart
+NFS (Network File System) labor.
+
+Enne välise failsüsteemi monteerimist(ühendamist) on vaja luua katalogid mille külge monteerimine toimub.
+Loome mount poindid kahe katalogi jaoks,
+
+katalog /kir kirjutamiseks ja katalog /lug lugemiseks:
+# mkdir /lug /kir
+
+Moundime lugemis katalogi
+% mount -t nfs <SERVERIP>:/read /lug
+% ls -l /lug
+-rwxr-xr-x 1 root mail 31 2011-03-01 09:26 fail1
+-rwxr-xr-x 1 root mail 31 2011-03-01 09:26 fail2
+
+Moundime kirjutamis katalogi
+# mount -t nfs <SERVERIP>:/write /kir
+Vaatame sisu
+# ls -l /kir
+-rwxr-xr-x 1 root mail 31 2011-03-01 09:26 fail3
+
+Loome uue katalogi ja faili kaug failsysteemis.
+# cd /kir mkdir folder1; touch newfile
+# ls -l
+-rwxr-xr-x 1 root mail 31 2011-03-01 09:26 fail3
+drwxr-xr-x 2 429496729 mail 68 2011-03-01 09:28 folder1
