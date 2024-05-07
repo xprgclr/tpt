@@ -1,3 +1,7 @@
+![alt text](_rsrc/image.png)
+
+
+
 # Задача 1
 Написание pеферата Выберите тему [siin](_rsrc/Assambler_tasks_vk.xlsx). Объем реферата должен быть 5-10 страниц. Кроме того, должны быть титульный лист, оглавление и список использованной литературы. Формат реферата *.pdf. Отправьте работу соответствующую папку Задания, Referat
 
@@ -58,5 +62,3 @@ https://www.youtube.com/@ByteByteGo/featured
 
 https://www.youtube.com/@AlekOS
 
-
-![alt text](_rsrc/image.png)

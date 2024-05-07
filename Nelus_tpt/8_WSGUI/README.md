@@ -2,11 +2,9 @@
 Jan.2024
 - [\_WS with GUI to work with DIY rooter aka GATEWAY](#_ws-with-gui-to-work-with-diy-rooter-aka-gateway)
   - [Intro](#intro)
-  - [Пререквезиты](#пререквезиты)
-  - [Создаём Workstation](#создаём-workstation)
-  - [Создаем Gateway](#создаем-gateway)
-  - [Делаем из Gateway Сервер](#делаем-из-gateway-сервер)
-  - [Юзаем Workstation](#юзаем-workstation)
+  - [Создаём Workstation (Host\_2)](#создаём-workstation-host_2)
+  - [do Gateway в роли сервера (Host\_1)](#do-gateway-в-роли-сервера-host_1)
+  - [Д.З](#дз)
 
 ***
 
@@ -25,14 +23,12 @@ Jan.2024
 </details>
 
 
-## Пререквезиты
 
-Задании на основе предыдущего. Только вместо RescueISO у нас будет клон нашей Debian машины, на которую мы будем ставить "GUI" (LightDM).
-На гейтвей будет в роли сервера с Apache, EmScripten, DosBox и SDL2
+## Создаём Workstation (Host_2)
+Задании на основе предыдущего. Только вместо [RescueISO](https://www.system-rescue.org/Download/) у нас будет голый Debian, на который мы будем ставить "GUI" (LightDM).
+Гейтвей будет в роли сервера с Apache, EmScripten, DosBox и SDL2
 
-## Создаём Workstation
-- Вместо RescueISO используем голый дебиан. Клонируем нашу машину. Ставим ей internal network.
-- Берем наш "чистый" Debian. debi12uefi.iso. Либо делаем клон того состояния, где мы не делали её еще в роли сервера. Чтобы не убирать те настройки
+- Берем наш "unattented чистый" [Debi12iuefi.iso](https://drive.google.com/file/d/17HxJednUyTaH0I_bmjBaRIV0INIy7eJY/view?usp=sharing) полученый из [deb12iuefi.sh](../0_tldr/_rsrc/deb12iuefi.sh). Либо делаем клон того состояния, где мы не делали её еще в роли сервера. Кидаём её в internal network.
 
 ![alt text](image.png)
 
@@ -69,8 +65,8 @@ user-session=lxde
 EOF
 ```
 
-- Чмодим, запускаем
-`chmod +x gui_up.sh`
+- Чмодим, запускаем  
+`chmod +x gui_up.sh`  
 `sudo ./gui_up.sh`
 
 - Ждём пока всё скачается и установится (~10мин), после установки делаем рестарт сервиса и проходим аутентификацию:  
@@ -83,15 +79,11 @@ EOF
 
 - Вырубаем, делаем снапшот на всякий случай).
 
-## Создаем Gateway
-- Всё то же самое что и в предыдущем задании. Или делаем всё сразу скриптом - [Router UP Script](../gateway/_rsrc/router_up.sh)
+## do Gateway в роли сервера (Host_1)
 
+- Всё то же самое что и в предыдущем задании-  [Gateway ulesanne](../7_gateway/README.md). Или делаем всё сразу скриптом - [Router UP Script.sh](../gateway/_rsrc/router_up.sh)
 
-
-
-## Делаем из Gateway Сервер
-
-- Возвращаемся на Gateway и настраиваем его дальше (ставим апач, досбокс и т.д ) [Скриптом](_answ/apache_up.sh)
+- Настраиваем его дальше (ставим апач, досбокс и т.д ).
 ```bash
 sudo apt update
 sudo apt upgrade -y
@@ -157,7 +149,7 @@ sudo cp hello.* /var/www/html
 # hello_sdl now available as http://<vm_ip>/hello.html
 ```
 
-- Проверяем, всё ок:  
+- Проверяем с workstation, всё ок:  
 ![alt text](image-4.png)
 
 
@@ -211,7 +203,7 @@ sudo cp hello_sdl.* /var/www/html/
 # hello_sdl now available as http://<vm_ip>/hello_sdl.html
 ```
 
-- Работает: 
+- Работает:  
 ![alt text](image-5.png)
 
 
@@ -248,8 +240,9 @@ sudo cp stryker.html stryker.data /var/www/html
 - И всё вместе одним скриптом:
 [apache_up](_answ/apache_up.sh)
 
-## Юзаем Workstation
-- Делаем ДЗ\ставим Heretic например
+## Д.З
+
+- Делаем Д/З - ставим Heretic например
 ```bash
 #!/bin/bash
 

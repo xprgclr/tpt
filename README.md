@@ -5,7 +5,7 @@
 - [Tunniplaan](https://tahvel.edu.ee/#/schoolBoard/14)
 - [Vormistamine](vormistamine.md)
 
-### Linux ülesanded :  
+### Linux ülesanded (Kirill) :  
 
 |      | Ülesanne:                                                                      |                       \# |
 | :--- | ------------------------------------------------------------------------------ | -----------------------: |
@@ -20,22 +20,22 @@
 |      |                                                                                |                          |
 | 7    | [Gateway KIT23V](Nelus_tpt/7_gateway/README.md)                                |      \#dnsmasq/iptables/ |
 | 8    | [WS with GUI to work with DIY rooter aka GATEWAY](Nelus_tpt/8_WSGUI/README.md) | \#lxde/apache/emscripten |
-| 9    | [LAMP, router, world db-](Nelus_tpt/9_lamp/README.md)                           |                \#mariadb |
+| 9    | [-LAMP, router, world db](Nelus_tpt/9_lamp/README.md)                           |                \#mariadb |
 |      |                                                                                |                          |
 | 10   | [Collect](Nelus_tpt/10_collect/README.md)                                      |                \#rsyslog |
-| 11   | [Diagnostics-](Nelus_tpt/11_diagnostics/README.md)                             |        \#nmap\facter\ssh |
+| 11   | [-Diagnostics](Nelus_tpt/11_diagnostics/README.md)                             |        \#nmap\facter\ssh |
 |      |                                                                                |                          |
 | 12   | [Monitoring](Nelus_tpt/12_monitoring/README.md)                                |                     -//- |
 | -//- | [Other *nix tmp stuff: Scripts Links ISO ](Nelus_tpt/_rsrc/README.md)              |                          |
 
 ***
 
-### OThr Notes:
-- [Cisco CLI](CCNA_tpt/README.md)
+### OThr tpt Notes:
+- [Cisco CLI.md](CCNA_tpt/README.md)
 - Vadim:
-[[Win Notes]](Veeremaa_tpt/win_notes.md)
-[[Net.Notes]](Veeremaa_tpt/netw_notes.md)
-- [OSes Tasks](Krusell_tpt/README.md)  
+[[Windows Notes.md]](Veeremaa_tpt/win_notes.md) |
+[[Networks Notes.md]](Veeremaa_tpt/netw_notes.md)
+- Urmas: [[OSes Tasks.md]](Krusell_tpt/README.md)  
 
 **_Links:**
 [[kirill.tpt.edu.ee]](http://kirill.tpt.edu.ee/)
@@ -46,12 +46,12 @@
 
 ### Src's:
 
-**\*.sh:** [[batch.sh]](Nelus_tpt/4_pwsh/_rsrc/batch.sh)
+- **\*.sh:** [[batch.sh]](Nelus_tpt/4_pwsh/_rsrc/batch.sh)
 [[daemon_up.sh]](Nelus_tpt/6_daemon/_rsrc/daemon_up.sh)
 [[router_up.sh]](Nelus_tpt/7_gateway/_rsrc/router_up.sh)
 [[apache_up.sh]](Nelus_tpt/8_WSGUI/_answ/apache_up.sh)
 
-**mix:**
+- **mix:**
 [[light.asm]](Krusell_tpt/_rsrc/light.asm)
 [[snake_keypad_task28.asm]](Krusell_tpt/_rsrc/snake_keypad_task28.asm)
 - [anim.cpp](Krusell_tpt/_rsrc/main.cpp) | [[*.GIF]](Krusell_tpt/_rsrc/main.gif)  ---->
@@ -66,9 +66,9 @@
 ## Not TPT / tmp:
 - [PDF vs Djvu compare](othr/PdfToDjvu/README.md)
 - [Компилим C/C++ под винду с graphics.h ( win vscode msys2 gcc sdl_bgi )](othr/winc/1_MSYS.md)
-  - [EmScripten ( vscode ssh debian apache emsdk )](othr/winc/2_emscripten.md)
+  - [-EmScripten ( vscode ssh debian apache emsdk )](othr/winc/2_emscripten.md)
 
-**&src's:**
+**Src's:**
 - [canvas/script.js](othr/src/canvas/script.js)
 - [tbHndlr/script.js](othr/src/tbHndlr/script.js)
 - [Xor/script.js](othr/src/Xor/script.js)
