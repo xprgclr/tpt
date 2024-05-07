@@ -20,17 +20,17 @@ sudo apt-get -y upgrade
 
 # next row modified:
 sudo apt install -y curl xorriso p7zip-full isolinux
-if [ -f "./debian-12.1.0-amd64-netinst.iso" ]
+if [ -f "./debian-12.5.0-amd64-netinst.iso" ]
 then
     echo ISO already downloaded.
 else
-    curl -LO https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
+    curl -LO https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.5.0-amd64-netinst.iso
 fi
 
 sudo rm -rf isofiles
 rm -f preseed.cfg preseed.cfg.init
 
-xorriso -osirrox on -indev debian-12.1.0-amd64-netinst.iso -extract / isofiles/
+xorriso -osirrox on -indev debian-12.5.0-amd64-netinst.iso -extract / isofiles/
 
 sudo sed -i 's/vesamenu.c32/install/' isofiles/isolinux/isolinux.cfg
 

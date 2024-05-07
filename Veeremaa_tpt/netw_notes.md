@@ -5,8 +5,8 @@
 - [22.04.2024 Kohtvõrgu komponentide paigaldus III](#22042024-kohtvõrgu-komponentide-paigaldus-iii)
 - [24.04.2024  Operatsioonisüsteemide sidumine III](#24042024--operatsioonisüsteemide-sidumine-iii)
 - [06.05.2024](#06052024)
+- [07.05.2024](#07052024)
 - [tmp](#tmp)
-- [\_](#_)
 
 
 
@@ -102,40 +102,17 @@ pptp VPN
 
 
 
-```
-# sudo su -
--- or
-# sudo -i
-```
--
-```
-useradd -s /bin/bash -m username
-pwd
-su - anna
-```
--
-```
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-touch ~/.ssh/authorized_keys && nano ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-```
--
-```
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-ssh-keygen -b 4096
-ls -al ~/.ssh
-ssh-copy-id anna@ssh-server-ip
-ssh anna@ssh-server-ip
-```
-
 
 ## 06.05.2024 
 
 - http://veeremaa.tpt.edu.ee/2011/nfs-lab.htm
 - [nfs-labor-kit23e.txt](_rsrcnet/nfs-labor-kit23e.txt)
 
+
+
+## 07.05.2024
+
+[debian-samba-servert.txt](_rsrcnet/debian-samba-servert.txt)
 
 
 ## tmp
@@ -155,6 +132,5 @@ umount /lug
 ps
 ```
 
-## _
 
------------------------------------------------------------
+

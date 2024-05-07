@@ -1,0 +1,127 @@
+SAMBA(CIFS) share on linux
+NB!!! create user with name "it" on all OS-es
+
+LINUX SMB server
+apt update
+apt install samba smbclient
+-- check out status of smb server
+systemctl status smbd
+smbpasswd 
+cp /etc/samba/smb.conf /etc/samba/smb.conf.back
+
+mkdir /var/samba
+chmod 777 /var/samba
+
+echo "" > /etc/samba/smb.conf
+nano /etc/samba/smb.conf
+-- file must be empty, paste next content:
+#_________________________________
+[global]
+   workgroup = WORKGROUP
+   dns proxy = no
+   log file = /var/log/samba/log.%m
+   max log size = 1000
+   syslog = 0
+   panic action = /usr/share/samba/panic-action %d
+   server role = standalone server
+   passdb backend = tdbsam
+   obey pam restrictions = yes
+   unix password sync = yes
+   passwd program = /usr/bin/passwd %u
+   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+   pam password change = yes
+   map to guest = bad user
+   usershare allow guests = yes
+[homes]
+   comment = Home Directories
+   browseable = yes
+   read only = yes
+   create mask = 0700
+   directory mask = 0700
+   valid users = %S
+[printers]
+   comment = All Printers
+   browseable = no
+   path = /var/spool/samba
+   printable = yes
+   guest ok = no
+   read only = yes
+   create mask = 0700
+[print$]
+   comment = Printer Drivers
+   path = /var/lib/samba/printers
+   browseable = yes
+   read only = yes
+   guest ok = no
+[public]
+  comment = public anonymous access
+  path = /var/samba/
+  browsable =yes
+  create mask = 0660
+  directory mask = 0771
+  writable = yes
+  guest ok = yes
+#_________________________________
+
+-- add samba password for existing linux user "it"
+smbpasswd -a it
+
+systemctl restart smbd
+-- List local shares
+smbclient -L localhost
+
+__________________________________
+
+SMB CLIENT on linux
+apt update
+apt install smbclient cifs-utils
+
+smbclient //192.168.0.124/public -U it ########################
+
+mkdir -p /mnt/public
+mount -t cifs -o username=it //192.168.0.124/public /mnt/public ########
+-- check mounted disks
+df -h
+cd /mnt/public
+mkdir testfolder
+touch testfile.txt
+
+-- Check that you see added elements on server /mnt/public
+mount -t cifs -o username=it //192.168.0.124/homes /mnt/public
+___________________________________
+
+SMB CLIENT on windows
+Open explorer and enter \\SERVERIP
+enter server user credentials.
+You will see server user home folder
+
+In explorer enter \\SERVERIP\public
+will see file public.txt, try to change them, are you can?
+
+In explorer enter \\SERVERIP\share
+will see myfile.txt, try to change content, are you can?
+
+IF you get ERROR theb try to use commandline version
+net use * \\SMBSERVERIP\SHARENAME /user:SMB_SERVERIL_KASUTAJANIMI
+peaks küsima parooli ja monteerima vaba tähekese külge
+
+Kontrolli käsureast:
+net use
+Kui kõik oli korras näed monteeritud SMB share mingi tähekese külge(näitex Z:).
+
+Mount network folder
+
+___________________________________
+How to log out from network path
+1.From the Start menu, select Control Panel.
+2.Click User Accounts.
+3.Click Credential Manager.
+4.In the Windows Credentials and Generic Credentials section, remove any stored credentials referencing shares, network drives or similar: Click (Details).
+5.Click Remove from vault.
+6.Click Yes on the warning box.
+7.Repeat these steps until you remove all of the credentials associated with network shares.
+8.Close the Control Panel window.
+
+OR
+From CLI
+net use \\SERVERIP\share /DELETE

@@ -1,9 +1,15 @@
-# _MAIN_TOC
+# TPT:
 ![](pik4a.jpeg)
 
-## TPT:
 - [Tunniplaan](https://tahvel.edu.ee/#/schoolBoard/14)
 - [Vormistamine](vormistamine.md)
+
+**_Links:**
+[[kirill.tpt.edu.ee]](http://kirill.tpt.edu.ee/)
+[[veeremaa.tpt.edu.ee]](http://veeremaa.tpt.edu.ee/)
+[[www.e-ope.usp.ee]](http://www.e-ope.usp.ee/dokeos2/) 
+[[scrumpoker.eu]](https://scrumpoker.eu/oppeained-2023-2024-2/)
+[[itmaili.weebly.com]](https://itmaili.weebly.com/)
 
 ### Linux ülesanded (Kirill) :  
 
@@ -20,36 +26,36 @@
 |      |                                                                                |                          |
 | 7    | [Gateway KIT23V](Nelus_tpt/7_gateway/README.md)                                |      \#dnsmasq/iptables/ |
 | 8    | [WS with GUI to work with DIY rooter aka GATEWAY](Nelus_tpt/8_WSGUI/README.md) | \#lxde/apache/emscripten |
-| 9    | [-LAMP, router, world db](Nelus_tpt/9_lamp/README.md)                           |                \#mariadb |
+| 9    | [-LAMP, router, world db](Nelus_tpt/9_lamp/README.md)                          |                \#mariadb |
 |      |                                                                                |                          |
 | 10   | [Collect](Nelus_tpt/10_collect/README.md)                                      |                \#rsyslog |
 | 11   | [-Diagnostics](Nelus_tpt/11_diagnostics/README.md)                             |        \#nmap\facter\ssh |
 |      |                                                                                |                          |
 | 12   | [Monitoring](Nelus_tpt/12_monitoring/README.md)                                |                     -//- |
-| -//- | [Other *nix tmp stuff: Scripts Links ISO ](Nelus_tpt/_rsrc/README.md)              |                          |
+| -//- | [Other *nix tmp stuff: Scripts Links ISO ](Nelus_tpt/_rsrc/README.md)          |                          |
 
 ***
 
-### OThr tpt Notes:
+### OThr TPT Notes:
 - [Cisco CLI.md](CCNA_tpt/README.md)
 - Vadim:
 [[Windows Notes.md]](Veeremaa_tpt/win_notes.md) |
-[[Networks Notes.md]](Veeremaa_tpt/netw_notes.md)
+[[Networks Notes.md]](Veeremaa_tpt/netw_notes.md) |
+[tmp](Veeremaa_tpt/tmp.md)
 - Urmas: [[OSes Tasks.md]](Krusell_tpt/README.md)  
 
-**_Links:**
-[[kirill.tpt.edu.ee]](http://kirill.tpt.edu.ee/)
-[[veeremaa.tpt.edu.ee]](http://veeremaa.tpt.edu.ee/)
-[[www.e-ope.usp.ee]](http://www.e-ope.usp.ee/dokeos2/) 
-[[scrumpoker.eu]](https://scrumpoker.eu/oppeained-2023-2024-2/)
-[[itmaili.weebly.com]](https://itmaili.weebly.com/)
 
-### Src's:
 
-- **\*.sh:** [[batch.sh]](Nelus_tpt/4_pwsh/_rsrc/batch.sh)
+**Src's:**
+
+- **\*.sh:**
+[[deb12iuefi.sh]](Nelus_tpt/0_tldr/_rsrc/deb12iuefi.sh)
+[[gui_up.sh]](Nelus_tpt/8_WSGUI/_answ/gui_up.sh)
+[[batch.sh]](Nelus_tpt/4_pwsh/_rsrc/batch.sh)
 [[daemon_up.sh]](Nelus_tpt/6_daemon/_rsrc/daemon_up.sh)
 [[router_up.sh]](Nelus_tpt/7_gateway/_rsrc/router_up.sh)
 [[apache_up.sh]](Nelus_tpt/8_WSGUI/_answ/apache_up.sh)
+
 
 - **mix:**
 [[light.asm]](Krusell_tpt/_rsrc/light.asm)
@@ -57,13 +63,13 @@
 - [anim.cpp](Krusell_tpt/_rsrc/main.cpp) | [[*.GIF]](Krusell_tpt/_rsrc/main.gif)  ---->
 [animv2.cpp](Krusell_tpt/_rsrc/main_03032024.cpp)  | [[*.GIF]](Krusell_tpt/_rsrc/main_03032024.gif)  
 
-
-
 ***
 ***
 ***
 
-## Not TPT / tmp:
+### Not TPT / tmp:
+
+
 - [PDF vs Djvu compare](othr/PdfToDjvu/README.md)
 - [Компилим C/C++ под винду с graphics.h ( win vscode msys2 gcc sdl_bgi )](othr/winc/1_MSYS.md)
   - [-EmScripten ( vscode ssh debian apache emsdk )](othr/winc/2_emscripten.md)
