@@ -29,7 +29,7 @@
 
 ![](attachments/Pasted%20image%2020241013212812.png)
 
-- **Quick start:** выбираем любой понравившийся Linux дистрибутив (главное чтоб была приписка "Free tier eligible"). В моём случае это Debian 12
+- **Quick start:** выбираем любой понравившийся Linux дистрибутив. В моём случае это Debian 12
 
 - **Instance type**: В зависимости от региона выбираем *t2.micro* или *t3.micro*. Главное чтоб с припиской *"Free tier eligible"*.
 
