@@ -57,7 +57,7 @@ Haписать скрипты
 - по желанию можем сделать host_rename
 - ставим apache, бд, php:
 ```bash
-sudo apt update && upgrade -y
+sudo apt update
 sudo apt install -y apache2 mariadb-server mariadb-client php libapache2-mod-php php-mysql
 php -v
 ```
